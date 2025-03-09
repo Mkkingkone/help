@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Aid for Choking</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f8ff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #adede8, #67d6e7);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1, h2, h3 {
+      color :#67d6e7;
+    }
+
+    .steps-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+    }
+
+    .step {
+      flex: 0 0 auto;
+      width: 300px;
+      padding: 15px;
+      border: 1px solid #0077b6;
+      border-radius: 8px;
+      background: #dae8c9;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .step img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #67d6e7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #0077b6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: linear-gradient(135deg, #0077b6, #0077b6);
+      color: white;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+  <script>
+    let currentStep = 0;
+
+    function showNextStep() {
+      const steps = document.querySelectorAll('.step');
+      if (currentStep < steps.length) {
+        steps[currentStep].style.display = 'block';
+        currentStep++;
+      }
+    }
+
+    function initializeSteps() {
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => step.style.display = 'none');
+      if (steps.length > 0) {
+        steps[0].style.display = 'block';
+        currentStep = 1;
+      }
+    }
+
+    window.onload = initializeSteps;
+  </script>
+</head>
+<body>
+  <header>
+    First Aid for Choking
+  </header>
+
+  <div class="container">
+    <h2>Steps to Help Someone Who Is Choking</h2>
+
+    <div class="steps-container">
+      <div class="step">
+        <h3>1. Encourage Coughing</h3>
+        <p>Ask the person to keep coughing if they can. Coughing is the most effective way to clear the airway.</p>
+        <img src="images/encourage to.webp" alt="Encourage Coughing" />
+      </div>
+
+      <div class="step">
+        <h3>2. Perform Back Blows</h3>
+        <p>Stand behind the person, lean them forward slightly, and give up to five firm back blows between the shoulder blades with the heel of your hand.</p>
+        <img src="images/Perform Back Blows.webp" alt="Perform Back Blows" />
+      </div>
+
+      <div class="step">
+        <h3>3. Perform Abdominal Thrusts</h3>
+        <p>Stand behind the person, wrap your arms around their waist, and deliver quick, upward abdominal thrusts until the object is expelled.</p>
+        <img src="images/Perform Abdominal Thrusts.webp" alt="Perform Abdominal Thrusts" />
+      </div>
+
+      <div class="step">
+        <h3>4. Alternate Steps</h3>
+        <p>If the airway is still blocked, alternate between five back blows and five abdominal thrusts until help arrives.</p><br>
+        <img src="images/Alternate Steps.webp" alt="Alternate Steps" height="300" />
+      </div>
+
+      <div class="step">
+        <h3>5. Call Emergency Services</h3>
+        <p>If the object does not come out or the person becomes unresponsive, call emergency services immediately.</p>
+        <img src="images/call an emergency.png" alt="Call Emergency Services" />
+      </div>
+
+      <div class="step">
+        <h3>6. Perform CPR if Necessary</h3>
+        <p>If the person becomes unresponsive, begin CPR. Check the mouth for the object between compressions and breaths.</p>
+        <img src="images/performe cpr.webp" alt="Perform CPR" />
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="showNextStep()">Next Step</button>
+    </div>
+
+    <h2>Additional Tips</h2>
+    <ul>
+      <li>Stay calm and act quickly.</li>
+      <li>Do not perform back blows or abdominal thrusts on someone who is coughing effectively.</li>
+      <li>If the person is pregnant or obese, use chest thrusts instead of abdominal thrusts.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; Help center | <a href="#"></a></p>
+  </footer>
+</body>
+</html>

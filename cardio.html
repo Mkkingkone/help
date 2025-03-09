@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> first aid for arret-cardiaque</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f8ff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #a2e0de, #3da9cd);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #dce7a1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1, h2, h3 {
+      color: #0077b6;
+    }
+
+    .steps-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px;
+    }
+
+    .step {
+      flex: 0 0 auto;
+      width: 250px;
+      padding: 15px;
+      border: 1px solid #0077b6;
+      border-radius: 8px;
+      background: #e9f5ff;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .step img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #005f8c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: linear-gradient(135deg, #0077b6, #0096c7);
+      color: white;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+  <script>
+    let currentStep = 0;
+
+    function showNextStep() {
+      const steps = document.querySelectorAll('.step');
+      if (currentStep < steps.length) {
+        steps[currentStep].style.display = 'block';
+        currentStep++;
+      }
+    }
+
+    function initializeSteps() {
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => step.style.display = 'none');
+      if (steps.length > 0) steps[0].style.display = 'block';
+    }
+
+    window.onload = initializeSteps;
+  </script>
+</head>
+<body>
+  <header>
+    First aid for arret-cardiaque
+  </header>
+  <div class="container">
+ 
+  <h2>steps :</h2>
+
+  <div class="steps-container">
+    <div class="step"> <strong>1. Check consciousness:</strong> <br>Talk to the victim and gently shake them. If they do not respond, proceed to the next step.<br><br> <img src="images/secouer.webp" alt="check consciousness"></div>
+    <div class="step" ><strong>2. Call for help:</strong> <br>Immediately dial 998 or 999 (firefighters). Request a defibrillator if available.<img src="images/image.secours.png" alt="call for help"></div>
+    <div class="step"><strong>3. Check breathing:</strong><br> Tilt the victim's head back and observe if their chest rises.<br><br> <img src="images/Vérifier la conscience.jpeg" alt="check breathing"></div>
+    <div class="step"><strong>4. Start chest compressions:</strong><br> Place your hands at the center of the chest and perform rapid compressions (100-120 per minute) until help arrives.<img src="images/massage.jpj.jpg" alt="start chest compressions"></div>
+    <div class="step"><strong>5. Follow the complete diagram:</strong><br> Be cautious!!!. <img src="images/Défibrillateur.png" alt="complete diagram"></div>
+
+  </div>
+
+  <div class="controls">
+    <button onclick="showNextStep()">Next Step</button>
+  </div>
+
+  <h2>Additional Tips</h2>
+  <ul>
+    <li>Stay calm and everything will be alright.</li>
+    <li>Call emergency services immediately.</li>
+    <li>Good luck.</li>
+  </ul>
+
+
+
+
+  
+  
+
+  <h2>Pour plus d'informations :</h2>
+  <a href="https://www.croix-rouge.fr/les-gestes-de-premiers-secours/arret-cardiaque" target="_blank">
+    <button>Visitez la Croix-Rouge</button>
+  </a>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Aid for Dental Injuries</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f0f8ff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #a2e0de, #3da9cd);
+      color: white;
+      text-align: center;
+      padding: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #dce7a1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1, h2, h3 {
+      color: #0077b6;
+    }
+
+    .steps-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 10px;
+    }
+
+    .step {
+      flex: 0 0 auto;
+      width: 250px;
+      padding: 15px;
+      border: 1px solid #0077b6;
+      border-radius: 8px;
+      background: #e9f5ff;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .step img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #005f8c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: linear-gradient(135deg, #0077b6, #0096c7);
+      color: white;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+  <script>
+    let currentStep = 0;
+
+    function showNextStep() {
+      const steps = document.querySelectorAll('.step');
+      if (currentStep < steps.length) {
+        steps[currentStep].style.display = 'block';
+        currentStep++;
+      }
+    }
+
+    function initializeSteps() {
+      const steps = document.querySelectorAll('.step');
+      steps.forEach(step => step.style.display = 'none');
+      if (steps.length > 0) steps[0].style.display = 'block';
+    }
+
+    window.onload = initializeSteps;
+  </script>
+</head>
+<body>
+  <header>
+    First Aid for Dental Injuries
+  </header>
+
+  <div class="container">
+    <h2>What to Do in Case of a Dental Injury?</h2>
+
+    <div class="steps-container">
+      <div class="step">
+        <h3>1. Check the Condition of the Tooth</h3>
+        <p>Examine if the tooth is broken, displaced, or knocked out. Use a light to thoroughly inspect the area.</p>
+        <img src="images/Check the Condition of the Tooth.jpg" alt="Dental Examination" />
+      </div>
+
+      <div class="step">
+        <h3>2. Stop the Bleeding</h3>
+        <p>Apply a sterile gauze or clean cloth with gentle pressure to stop the bleeding.</p>
+        <img src="images/Stop the Bleeding.png" alt="Stop the Bleeding" />
+      </div>
+
+      <div class="step">
+        <h3>3. Preserve the Tooth</h3>
+        <p>If the tooth is knocked out, immediately place it in a glass of milk or saline solution to keep it moist.</p>
+        <img src="images/Preserve the Tooth.jpg" alt="Preserve the Tooth" />
+      </div>
+
+      <div class="step">
+        <h3>4. Visit a Dentist Quickly</h3>
+        <p>Go to a dentist or an emergency room immediately for proper treatment. Acting quickly can save the tooth.</p>
+        <img src="images/Visit a Dentist Quickly.webp" alt="Dental Consultation" />
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="showNextStep()">Next Step</button>
+    </div>
+
+    <h2>Additional Tips</h2>
+    <ul>
+      <li>Stay calm to reassure the injured person.</li>
+      <li>Avoid touching the root of the tooth if it is knocked out.</li>
+      <li>Do not rinse the tooth with tap water.</li>
+      <li>Use an ice pack on the affected area to reduce swelling.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; help center  <a href="#">Contact Us</a></p>
+  </footer>
+</body>
+</html>
